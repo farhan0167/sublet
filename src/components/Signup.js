@@ -42,9 +42,9 @@ const SignUp = (props) => {
     <React.Fragment>
       <Container className='d-flex align-items-center justify-content-center' style={{minHeight:"100vh"}}>
       <div className='w-100' style={{maxWidth:"400px"}}>
-        <Card>
+        <Card className="shadow p-3 mb-5 bg-white rounded" style={{'marginTop':'50px'}}>
           <Card.Body>
-            <h2 className='text-center mb-4'>Sign Up</h2>
+            <Card.Text style={{'fontSize':'30px','fontWeight':'700'}} className='text-center mb-4'>Sign Up</Card.Text>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form className='m-auto' onSubmit={handleSubmit}>
               <Form.Group id='name'>

@@ -1,25 +1,29 @@
+// eslint-disable-next-line
 import React, {useState, useEffect} from 'react'
-import {Card, Button, Alert} from 'react-bootstrap'
-import {useAuth} from '../contexts/AuthContext'
+import {Card,Image, Container} from 'react-bootstrap'
+
 import {useHistory} from 'react-router-dom'
 import {db} from '../firebase'
-import {Link} from 'react-router-dom'
+
 
 
 const Landing = (props) => {
-  const [error, setError] = useState('')
-  const {currentUser, logout} = useAuth()
+
+
   const history = useHistory()
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(false)
-  const ref = db.collection('listings')
+  const ref = db.collectionGroup('userListings').where('status','!=','booked')
 
   function getListing(){
     setLoading(true)
     ref.onSnapshot(query => {
       const data = []
       query.forEach(doc=>{
-        data.push(doc.data())
+        var listingObj = {'id': '', 'data':[]}
+        listingObj.id = doc.id
+        listingObj.data = doc.data()
+        data.push(listingObj)
       })
       setListings(data)
       console.log(data)
@@ -30,17 +34,39 @@ const Landing = (props) => {
     getListing()
   },[])
 
+  function listingClick(e){
+    const listingId = e.currentTarget.id
+    console.log(e.currentTarget.id)
+    history.push('/listing/?'+listingId) //make sure you are consistent with the protocols. Does question mark appear?
+  }
+
   return (
     <React.Fragment>
-      <ul>
-        {listings && listings.map(listing => (
-          <li>
-            <strong> Name: </strong>{listing.name}<br></br>
-            <strong> Description: </strong>{listing.description}
-          </li>
+    <Image src='cover2.jpg' style={{'height':'100vh','objectFit':'cover','width':'100%'}} />
+    <Container style={{'marginTop':'50px'}}>
+      <h3 style={{'fontWeight':'800'}}>Sublets Near You</h3>
+      <hr></hr>
+      {listings && listings.map(listing => (
+            <a style={{ cursor: 'pointer' }} onClick={listingClick} id={listing.id}>
+            <Card className="shadow p-3 mb-5 bg-white rounded" style={{'marginTop':'20px'}}>
+            <Card.Body>
+              <div style={{'display':'flex'}}>
+                <Image style={{'width':'200px','height':'150px', 'marginRight':'10px'}} src={listing.data.listingPhoto}/>
+                <div>
+                  <Card.Title style={{'fontWeight':'700','fontSize':'22px'}}>{listing.data.name}</Card.Title>
+                  <Card.Text style={{'fontWeight':'200'}}>{listing.data.address}</Card.Text>
+                  <Card.Text style={{'fontWeight':'500'}}>$ {listing.data.rent}/ month</Card.Text>
+                  <Card.Text style={{'fontWeight':'300'}}>
+                    {listing.data.description}
+                  </Card.Text>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </a>
         ))}
+        </Container>
 
-      </ul>
 
     </React.Fragment>
   )

@@ -7,6 +7,7 @@ import {useAuth} from '../../contexts/AuthContext'
 const PostListing = (props) => {
   const ListingRef = useRef()
   const BedRef = useRef()
+  const rentRef = useRef()
   const BathRef = useRef()
   const guestRef = useRef()
   const descriptionRef = useRef()
@@ -15,6 +16,7 @@ const PostListing = (props) => {
   const {postListing} = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [fileName, setFileName] = useState('Empty')
   const history = useHistory()
 
   async function handleSubmit(e){
@@ -22,13 +24,18 @@ const PostListing = (props) => {
     try{
       setError('')
       setLoading(true)
-      await postListing(ListingRef.current.value, addressRef.current.value, BedRef.current.value, BathRef.current.value, furnishedRef.current.value, guestRef.current.value, descriptionRef.current.value)
+      await postListing(ListingRef.current.value, addressRef.current.value, BedRef.current.value, BathRef.current.value, furnishedRef.current.value, guestRef.current.value, descriptionRef.current.value, rentRef.current.value,fileName)
       history.push('/profile')
     } catch{
       setError("Failed to perform action.")
       console.log(error)
     }
     setLoading(false)
+  }
+  function onFileChange(e){
+    const file = e.target.files[0]
+    setFileName(file)
+    console.log(file)
   }
 
 
@@ -44,6 +51,10 @@ const PostListing = (props) => {
               <Form.Group id='listing-name'>
                 <Form.Label>Listing Name</Form.Label>
                 <Form.Control type='text' ref={ListingRef} required/>
+              </Form.Group>
+              <Form.Group id='rent'>
+                <Form.Label>Rent Amount Per Month</Form.Label>
+                <Form.Control type="number" step="0.01" ref={rentRef} required/>
               </Form.Group>
               <Form.Row>
                 <Form.Group as={Col} id='bed'>
@@ -73,6 +84,10 @@ const PostListing = (props) => {
               <Form.Group id='desc'>
                 <Form.Label>Add a Description</Form.Label>
                 <Form.Control type='text' as="textarea" rows={6} ref={descriptionRef} required/>
+              </Form.Group>
+              <Form.Group id='listingPhoto'>
+                <Form.Label>Upload Photo</Form.Label>
+                <Form.File type='file' id='profile-photo' onChange={onFileChange}/>
               </Form.Group>
               <Button className='w-100' type='submit' disabled={loading}>Save Changes</Button>
             </Form>

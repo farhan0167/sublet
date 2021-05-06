@@ -29,11 +29,12 @@ const Login = (props) => {
 
   return (
     <React.Fragment>
+      <div>
       <Container className='d-flex align-items-center justify-content-center' style={{minHeight:"100vh"}}>
       <div className='w-100' style={{maxWidth:"400px"}}>
-        <Card>
+        <Card className="shadow p-3 mb-5 bg-white rounded">
           <Card.Body>
-            <h2 className='text-center mb-4'>Log In</h2>
+            <Card.Text style={{'fontSize':'30px','fontWeight':'700'}} className='text-center mb-4'>Log In</Card.Text>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form className='m-auto' onSubmit={handleSubmit}>
               <Form.Group id='email'>
@@ -56,7 +57,7 @@ const Login = (props) => {
         </div>
       </div>
       </Container>
-
+      </div>
     </React.Fragment>
   )
 }
