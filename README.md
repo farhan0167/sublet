@@ -5,15 +5,15 @@ This application allows users to find sublets and post thier own sublets in the 
 ## Video Walkthrough
 
 ![Part One](public/walkthrough/2.GIF)
-
+<br>
 ![Part Two](public/walkthrough/3.GIF)
-
+<br>
 ![Part Three](public/walkthrough/4.GIF)
-
+<br>
 ![Part Four](public/walkthrough/1.GIF)
-
+<br>
 ![Part One](public/walkthrough/5.GIF)
-
+<br>
 ### User Story:
 
 > #### Subletee
@@ -24,7 +24,7 @@ This application allows users to find sublets and post thier own sublets in the 
 >> 5. Once lease signed, sublettee can start their stay based on contract.
 
 > #### Subletter
-Assuming the subletter has already created an account and posted their listing:
+>>Assuming the subletter has already created an account and posted their listing:
 >> 1. Subletters get to see the requests coming in from potential sublette's.
 >> 2. Subletter approves/ declines requests for booking
 
