@@ -1,3 +1,35 @@
+# SubbE- Subletting Platform
+
+This application allows users to find sublets and post thier own sublets in the market. I developed this app as part of my CIS capstone project to leverage the skills and knowledge I acquired thorugh my undergraduate degree in Information Systems.
+
+## Video Walkthrough
+
+![Part One](public/walkthrough/2.GIF)
+
+![Part Two](public/walkthrough/3.GIF)
+
+![Part Three](public/walkthrough/4.GIF)
+
+![Part Four](public/walkthrough/1.GIF)
+
+![Part One](public/walkthrough/5.GIF)
+
+### User Story:
+
+> #### Subletee
+>> 1. Signs up for an account and updates bio/picture <br>
+>> 2. Browses through available listings(sublets), and chooses one.
+>> 3. Sends a booking request to subleter for review.
+>> 4. Once approved, the sublettee needs to set up payment and sign a contract.
+>> 5. Once lease signed, sublettee can start their stay based on contract.
+
+> #### Subletter
+Assuming the subletter has already created an account and posted their listing:
+>> 1. Subletters get to see the requests coming in from potential sublette's.
+>> 2. Subletter approves/ declines requests for booking
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
