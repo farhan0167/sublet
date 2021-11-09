@@ -5,15 +5,27 @@ This application allows users to find sublets and post thier own sublets in the 
 ## Video Walkthrough
 
 ![Part One](public/walkthrough/2.GIF)
-<br>
+\
+&nbsp;
+\
+&nbsp;
 ![Part Two](public/walkthrough/3.GIF)
-<br>
+\
+&nbsp;
+\
+&nbsp;
 ![Part Three](public/walkthrough/4.GIF)
-<br>
+\
+&nbsp;
+\
+&nbsp;
 ![Part Four](public/walkthrough/1.GIF)
-<br>
-![Part One](public/walkthrough/5.GIF)
-<br>
+\
+&nbsp;
+\
+&nbsp;
+![Part Five](public/walkthrough/5.GIF)
+
 ### User Story:
 
 > #### Subletee
