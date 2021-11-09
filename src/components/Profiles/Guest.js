@@ -4,6 +4,7 @@ import {useAuth} from '../../contexts/AuthContext'
 import {useHistory} from 'react-router-dom'
 import {db} from '../../firebase'
 import {Link} from 'react-router-dom'
+import ComingSoon from '../ComingSoon'
 
 const Guest = (props) => {
   const [error, setError] = useState('')
@@ -65,7 +66,13 @@ const Guest = (props) => {
                 <Card.Text style={{'fontSize':'20px','fontWeight':'500'}}>Guest: {guest.stayRequest[0].staySubletteeName}</Card.Text>
               </div>
               <div style={{'display':'flex'}}>
-                <Button style={{'margin':'10px', 'width':'150px'}} variant='primary'> View Contract</Button>
+
+                <ComingSoon
+                   width="150px"
+                   height="40px"
+                   name="Contract"
+                   text = "This feature will allow you to view your contract with the sublette."
+                />
               </div>
             </Card.Body>
           </Card>

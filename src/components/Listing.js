@@ -4,6 +4,7 @@ import {useAuth} from '../contexts/AuthContext'
 import {useHistory} from 'react-router-dom'
 import {db} from '../firebase'
 import {Link} from 'react-router-dom'
+import ComingSoon from './ComingSoon'
 
 const Listing = (props) => {
   const [error, setError] = useState('')
@@ -75,14 +76,19 @@ const Listing = (props) => {
       <Card.Body>
       <Card.Title>About Host</Card.Title>
       <div style={{'display':'flex'}}>
-        <Image src='https://www.worldfuturecouncil.org/wp-content/uploads/2020/02/dummy-profile-pic-300x300-1.png' style={{'width':'80px', 'height':'80px','objectFit':'cover'}} roundedCircle/>
+        <Image src={listings.subletterPhoto} style={{'width':'80px', 'height':'80px','objectFit':'cover'}} roundedCircle/>
         <div style={{'marginLeft':'50px'}}>
           <Card.Text>
           {listings.host}
           </Card.Text>
         </div>
       </div>
-        <Button variant="primary">Contact</Button>
+        <ComingSoon
+          name = "Contact Host"
+          width = "150px"
+          height = "40px"
+          text = "This feature would allow you to start a conversation with the subletter."
+        />
       </Card.Body>
     </Card>
     </Col>

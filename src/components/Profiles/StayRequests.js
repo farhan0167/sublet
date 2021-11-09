@@ -4,6 +4,7 @@ import {useAuth} from '../../contexts/AuthContext'
 import {useHistory} from 'react-router-dom'
 import {db} from '../../firebase'
 import {Link} from 'react-router-dom'
+import ComingSoon from '../ComingSoon'
 
 function Payment(props) {
 return (
@@ -116,9 +117,19 @@ const StayRequests = (props) => {
           <Card.Body>
             <div style={{'display':'flex'}}>
               <div>
-                <Card.Title>{stayRequests.name}</Card.Title>
-                <Button style={{'margin':'10px', 'width':'150px'}} variant='primary'> View Contract</Button>
-                <Button style={{'margin':'10px', 'width':'250px'}} variant='primary'> Upload Financial Documents</Button>
+                <Card.Title style={{'fontSize':'25px','fontWeight': '600'}}>{stayRequests.name}</Card.Title>
+                  <ComingSoon
+                    name="View Contract"
+                    width="150px"
+                    height="40px"
+                    text="This feature will allow you to view the contract."
+                    />
+                <ComingSoon
+                  name="Upload Financial Documents"
+                  width="250px"
+                  height="40px"
+                  text="This feature will allow the sublette to upload any requested financial documents."
+                  />
                 <Button variant="primary" onClick={() => setModalShow(true)}>Set Payment Method</Button>
                 <Payment show={modalShow} onHide={() => setModalShow(false)}/>
                 <Button
@@ -137,7 +148,12 @@ const StayRequests = (props) => {
                    >
                    Accept Contract
                  </Button>
-                <Button style={{'margin':'10px', 'width':'150px'}} variant='danger'> Decline Offer</Button>
+                 <ComingSoon
+                   name="Decline Offer"
+                   width = "150px"
+                   height = "40px"
+                   text = "This feature would allow you to decline the subletters offer."
+                   />
               </div>
             </div>
           </Card.Body>

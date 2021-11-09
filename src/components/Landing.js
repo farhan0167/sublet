@@ -51,7 +51,7 @@ const Landing = (props) => {
             <Card className="shadow p-3 mb-5 bg-white rounded" style={{'marginTop':'20px'}}>
             <Card.Body>
               <div style={{'display':'flex'}}>
-                <Image style={{'width':'200px','height':'150px', 'marginRight':'10px'}} src={listing.data.listingPhoto}/>
+                <Image style={{'width':'200px','height':'150px', 'marginRight':'50px'}} src={listing.data.listingPhoto}/>
                 <div>
                   <Card.Title style={{'fontWeight':'700','fontSize':'22px'}}>{listing.data.name}</Card.Title>
                   <Card.Text style={{'fontWeight':'200'}}>{listing.data.address}</Card.Text>

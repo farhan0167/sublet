@@ -13,7 +13,7 @@ const PostListing = (props) => {
   const descriptionRef = useRef()
   const addressRef = useRef()
   const furnishedRef = useRef()
-  const {postListing} = useAuth()
+  const {postListing, currentUser} = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [fileName, setFileName] = useState('Empty')
@@ -24,7 +24,7 @@ const PostListing = (props) => {
     try{
       setError('')
       setLoading(true)
-      await postListing(ListingRef.current.value, addressRef.current.value, BedRef.current.value, BathRef.current.value, furnishedRef.current.value, guestRef.current.value, descriptionRef.current.value, rentRef.current.value,fileName)
+      await postListing(ListingRef.current.value, addressRef.current.value, BedRef.current.value, BathRef.current.value, furnishedRef.current.value, guestRef.current.value, descriptionRef.current.value, rentRef.current.value,fileName,currentUser.photoURL)
       history.push('/profile')
     } catch{
       setError("Failed to perform action.")

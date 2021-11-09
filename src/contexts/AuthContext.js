@@ -78,7 +78,7 @@ export function AuthProvider({children}){
 
   }
 
-  function postListing(name, address, beds, baths, furnished, guests, description,rent,photoFile){
+  function postListing(name, address, beds, baths, furnished, guests, description,rent,photoFile,subletterPhoto){
     //post listing
     var user = auth.currentUser;
       if (user) {
@@ -101,7 +101,8 @@ export function AuthProvider({children}){
           //guest: populate guest info? object holding user information.
           subletteeId: '', //used to query in StayRequest.js for identification
           rent: rent,
-          listingPhoto: "https://cdn.styleblueprint.com/wp-content/uploads/2015/12/SB-ATL-ZookHome-9-e1538165814448.jpg"
+          listingPhoto: "https://cdn.styleblueprint.com/wp-content/uploads/2015/12/SB-ATL-ZookHome-9-e1538165814448.jpg",
+          subletterPhoto: subletterPhoto
         })
         var newDocRef2 = db.collection("userListings").doc(newDocRef.id)
         const update = storage.ref('listings/' + newDocRef.id + '/listingPhoto.jpg').put(photoFile).then(img =>{
@@ -192,7 +193,7 @@ export function AuthProvider({children}){
       currentGuestStatus: true
     })
 
-    //Create a new instance in the database storing the transaction. 
+    //Create a new instance in the database storing the transaction.
 
   }
   function stayRequestDecline(){

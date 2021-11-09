@@ -4,6 +4,7 @@ import {useAuth} from '../../contexts/AuthContext'
 import {useHistory} from 'react-router-dom'
 import {db} from '../../firebase'
 import {Link} from 'react-router-dom'
+import ComingSoon from '../ComingSoon'
 
 const ShowRequests = (props) => {
   const [error, setError] = useState('')
@@ -73,7 +74,12 @@ const ShowRequests = (props) => {
                  >
                   Accept
                 </Button>
-                <Button style={{'margin':'10px', 'width':'100px'}} variant='danger'> Decline</Button>
+                <ComingSoon
+                  name="Decline"
+                  width = "100px"
+                  height = "40px"
+                  text = "This feature would allow you to decline a sublete's request."
+                  />
               </div>
             </div>
           </Card.Body>

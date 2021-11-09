@@ -4,6 +4,7 @@ import {useAuth} from '../../contexts/AuthContext'
 import {useHistory} from 'react-router-dom'
 import {db} from '../../firebase'
 import {Link} from 'react-router-dom'
+import ComingSoon from '../ComingSoon'
 
 const Stay = (props) => {
   const [error, setError] = useState('')
@@ -65,7 +66,12 @@ const Stay = (props) => {
                 <h5>Host: {stay.stayRequest[0].stayHostName}</h5>
               </div>
               <div style={{'display':'flex'}}>
-                <Button style={{'margin':'10px', 'width':'150px'}} variant='primary'> View Contract</Button>
+                <ComingSoon
+                  name="View Contract"
+                  width = "150px"
+                  height = "40px"
+                  text = "This feature would allow you to view your current contract."
+                  />
               </div>
             </Card.Body>
           </Card>

@@ -58,9 +58,9 @@ const UserProfile = (props) => {
       <Card className="shadow p-3 mb-5 bg-white rounded" style={{'marginTop':'70px'}}>
         <Card.Body>
           <center>
-          <h2 className='text-center mb-4' style={{'fontSize':'40px','fontWeight':'700','color':'#F28C0F'}}>Profile</h2>
+          <h2 className='text-center mb-4' style={{'fontSize':'45px','fontWeight':'700','color':'#F28C0F'}}>Profile</h2>
           {error && <Alert variant='danger'>{error}</Alert>}
-          <Image id='profile-img' src={currentUser.photoURL} style={{'width':'171px', 'height':'180px','objectFit':'cover'}} roundedCircle/><br></br>
+          <Image id='profile-img' src={currentUser.photoURL} style={{'width':'171px', 'height':'180px','objectFit':'cover','marginTop':'40px'}} roundedCircle/><br></br>
           <Card.Text style={{'fontSize':'30px','fontWeight':'600','marginTop':'30px'}}>{currentUser.displayName}</Card.Text>
           <Card.Text style={{'fontSize':'18px','fontWeight':'300','marginTop':'20px'}}>{userInfo.bio}</Card.Text>
           </center>
