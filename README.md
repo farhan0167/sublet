@@ -2,6 +2,8 @@
 
 This application allows users to find sublets and post thier own sublets in the market. I developed this app as part of my CIS capstone project to leverage the skills and knowledge I acquired thorugh my undergraduate degree in Information Systems.
 
+## [Live Demo](https://stunning-madeleine-acbd8d.netlify.app/)
+
 ## Video Walkthrough
 
 ![Part One](public/walkthrough/2.GIF)
